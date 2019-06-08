@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5) - Web Developer Hodory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="PHP5에서 무엇이 바뀌었을까? 젠드엔진2가 내장되었습니다. PHP GCI 버전이 php.exe 에서 php-cgi.exe 로 변경되었습니다. PHP CLI 버전이 cli/php.exe 에서 주 디렉토리로 변경되었습니다. PHP CLI 버전은 php.ini 지시어 설정과 상관없이 항상 전역 $argv(Array of arguments passed to sc">
+<meta name="keywords" content="PHP,PHP5,PHP4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)">
+<meta property="og:url" content="https://hodory.dev/2018/04/20/php4-vs-php5/index.html">
+<meta property="og:site_name" content="Web Developer Hodory">
+<meta property="og:description" content="PHP5에서 무엇이 바뀌었을까? 젠드엔진2가 내장되었습니다. PHP GCI 버전이 php.exe 에서 php-cgi.exe 로 변경되었습니다. PHP CLI 버전이 cli/php.exe 에서 주 디렉토리로 변경되었습니다. PHP CLI 버전은 php.ini 지시어 설정과 상관없이 항상 전역 $argv(Array of arguments passed to sc">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://hodory.dev/images/php-logo-svg-vector.svg">
+<meta property="og:updated_time" content="2019-05-12T07:11:32.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)">
+<meta name="twitter:description" content="PHP5에서 무엇이 바뀌었을까? 젠드엔진2가 내장되었습니다. PHP GCI 버전이 php.exe 에서 php-cgi.exe 로 변경되었습니다. PHP CLI 버전이 cli/php.exe 에서 주 디렉토리로 변경되었습니다. PHP CLI 버전은 php.ini 지시어 설정과 상관없이 항상 전역 $argv(Array of arguments passed to sc">
+<meta name="twitter:image" content="https://hodory.dev/images/php-logo-svg-vector.svg">
+<meta property="fb:admins" content="118893982173772">
+<meta property="fb:app_id" content="499229817121224">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night.css">
+
+
+    <link rel="amphtml" href="https://hodory.dev/2018/04/20/php4-vs-php5/amp/index.html">
+
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100483080-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-100483080-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<!-- Naver Site Verification -->
+<meta name="naver-site-verification" content="d723a500e9113b8daa9f89742cfe24ce553292f0">
+<!-- End Naver Site Verification -->
+<!-- Facebook Pixel Code -->
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(
+                    n, arguments) :
+                n.queue.push(
+                    arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+    );
+    fbq('init', '118893982173772');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=118893982173772&ev=PageView&noscript=1">
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- onesignal-->
+<link rel="manifest" href="/manifest.json">
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+<script>
+    var OneSignal = window.OneSignal ||
+        [];
+    OneSignal.push(function () {
+        OneSignal.init({
+            appId: "e6af580a-28ff-4917-8bf4-6015a7c4aeec",
+        });
+    });
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-2860780921894189",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/hodory">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/images/php-logo-svg-vector.svg" alt="［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-04-19T17:04:12.000Z">2018-04-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8분 읽기 (나에 대하여 1271 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                ［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)
+            
+        </h1>
+        <div class="content">
+            <h3 id="PHP5에서-무엇이-바뀌었을까"><a href="#PHP5에서-무엇이-바뀌었을까" class="headerlink" title="PHP5에서 무엇이 바뀌었을까?"></a>PHP5에서 무엇이 바뀌었을까?</h3><ul>
+<li>젠드엔진2가 내장되었습니다.</li>
+<li>PHP GCI 버전이 <code>php.exe</code> 에서 <code>php-cgi.exe</code> 로 변경되었습니다.</li>
+<li>PHP CLI 버전이 <code>cli/php.exe</code> 에서 주 디렉토리로 변경되었습니다.</li>
+<li>PHP CLI 버전은 <code>php.ini</code> 지시어 설정과 상관없이 항상 전역 <code>$argv</code>(Array of arguments passed to script) 와 <code>$argc</code>(The number of arguments passed to script) 변수를 가지며, <code>register_argc_argv</code>(argv와 argc 변수를 선언할지 여부 설정)를 <code>off</code>로 설정해도 영향을 미치지 않습니다.<a id="more"></a></li>
+<li>ISAPI 모듈들의 이름이 php4xxx에서 php5xxx로 바뀌었습니다.</li>
+<li>프로퍼티가 없는 객체를 “빈” 것으로 판단하지 않습니다.</li>
+<li>인터페이스 등을 사용할 경우, 사용 전 선언해야합니다.</li>
+<li>포함한 파일에 함수정의가 있을경우, 그 파일이 두번 포함 되었을 때,PHP5에서는 치명적인 오류가 발생합니다. include_once를 사용하길 권장합니다.</li>
+<li>키워드<ul>
+<li>예외처리(try()-catch()-finally()[v5.5~])</li>
+<li>네임스페이스[v5.3~]</li>
+<li>인터페이스(interface,implements)</li>
+<li>추상클래스(abstract)</li>
+<li>접근제어자(private,protected,public)</li>
+<li>instanceof : 객체의 클래스 확인</li>
+<li>clone : 객체 복제</li>
+<li>컴파일 상수<ul>
+<li><code>__NAMESPACE__</code> [v5.3~]</li>
+<li><code>__DIR__</code> [v5.3~]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DataBase<ul>
+<li>MySQL 클라이언트 라이브러리를 포함하지 않습니다.</li>
+<li>MySQL 4.1 이상에서 동작하는 <a href="https://php.net/manual/kr/ref.mysqli.php" title="공식 문서로 이동" target="_blank" rel="noopener">MySQLi</a>가 추가되었습니다.</li>
+<li><a href="https://php.net/manual/kr/ref.sqlite.php" target="_blank" rel="noopener">SQLite</a> 확장 모듈이 포함됩니다.</li>
+</ul>
+</li>
+<li>새로운 함수가 추가되었습니다.(New Functions)<ul>
+<li>배열 (9개)<ul>
+<li><a href="https://php.net/manual/kr/function.array-combine.php" target="_blank" rel="noopener">array_combine()</a> : 하나의 배열은 키로, 하나의 배열은 값으로 가지는 배열 생성 합니다.</li>
+<li><a href="https://php.net/manual/kr/function.array-walk-recursive.php" target="_blank" rel="noopener">array_walk_recursive()</a> : 배열의 모든 원소에 사용자 함수를 적용합니다.</li>
+<li>이 외의 7개 함수</li>
+</ul>
+</li>
+<li>iconv (7개)<ul>
+<li><a href="https://php.net/manual/kr/function.iconv-strlen.php" target="_blank" rel="noopener">iconv_strlen()</a> : 문자열의 문자 수를 반환 합니다.</li>
+<li><a href="https://php.net/manual/kr/function.iconv-strpos.php" target="_blank" rel="noopener">iconv_strpos()</a> : haystack에서 needle이 처음으로 나타나는 위치를 찾습니다.</li>
+<li><a href="https://php.net/manual/kr/function.iconv-strrpos.php" target="_blank" rel="noopener">iconv_strrpos()</a> : haystack에서 needle이 마지막으로 나타나는 위치를 찾습니다.</li>
+<li><a href="https://php.net/manual/kr/function.iconv-substr.php" target="_blank" rel="noopener">iconv_substr()</a> : 문자열의 일부를 잘라냅니다.</li>
+<li>이 외의 3개 함수</li>
+</ul>
+</li>
+<li>스트림 (8개)<ul>
+<li><a href="https://php.net/manual/kr/function.stream-copy-to-stream.php" target="_blank" rel="noopener">stream_copy_to_stream()</a> : 한 스트림의 데이터를 다른 스트림으로 복제합니다.</li>
+<li><a href="https://php.net/manual/kr/function.stream-get-line.php" target="_blank" rel="noopener">stream_get_line()</a> : 스트림 자원에서 주어진 구분자로 나타나는 열을 얻습니다.</li>
+<li>이 외의 6개 함수</li>
+</ul>
+</li>
+<li>날짜와 시간 관련 (4개)<ul>
+<li><a href="https://php.net/manual/kr/function.idate.php" target="_blank" rel="noopener">idate()</a> : 지역 날짜/시간을 정수로 바꿉니다.</li>
+<li><a href="https://php.net/manual/kr/function.date-sunset.php" target="_blank" rel="noopener">date_sunset()</a> : 주어진 날짜와 위치의 일몰 시간을 반환합니다.</li>
+<li><a href="https://php.net/manual/kr/function.date-sunrise.php" target="_blank" rel="noopener">date_sunrise()</a> : 주어진 날짜와 위치의 일출 시간을 반환합니다.</li>
+<li><a href="https://php.net/manual/kr/function.time-nanosleep.php" target="_blank" rel="noopener">time_nanosleep()</a> : 초와 나노초의 수만큼 지연합니다.</li>
+</ul>
+</li>
+<li>문자열 (3개)<ul>
+<li><a href="https://php.net/manual/kr/function.str-split.php" target="_blank" rel="noopener">str_split()</a> : 문자열을 배열로 변환합니다.</li>
+<li><a href="https://php.net/manual/kr/function.strpbrk.php" target="_blank" rel="noopener">strbrk()</a> : 문자열에서 문자 세트에 있는 문자를 검색합니다.(대소문자 구분하여 세트중 한글자라도 먼저 나오는것을 찾습니다.)</li>
+<li><a href="https://php.net/manual/kr/function.substr-compare.php" target="_blank" rel="noopener">substr_compare()</a> : 두 문자열을 offset부터 length까지(대소문자 구분없이:옵션) 바이너리로 안전하게 비교합니다.</li>
+</ul>
+</li>
+<li>인터베이스 (19개)</li>
+<li>기타 (30개)<ul>
+<li><a href="https://php.net/manual/kr/function.file-put-contents.php" target="_blank" rel="noopener">file_put_contents()</a> : 문자열을 파일로 씁니다.</li>
+<li><a href="https://php.net/manual/kr/function.get-headers.php" target="_blank" rel="noopener">get_headers()</a> : HTTP 요청의 응답으로 서버가 보낸 모든 헤더를 가져옵니다.</li>
+<li><a href="https://php.net/manual/kr/function.http-build-query.php" target="_blank" rel="noopener">http_build_query()</a> : 배열을 이용하여 URL-encode한 쿼리 문자열을 생성합니다.</li>
+<li><a href="https://php.net/manual/kr/function.scandir.php" target="_blank" rel="noopener">scandir()</a> : 지정한 경로 안에 파일과 디렉토리 목록을 배열로 반환합니다.</li>
+<li>이 외의 27개 함수</li>
+</ul>
+</li>
+<li>자세한 내용은 <a href="https://php.net/manual/kr/migration5.functions.php" target="_blank" rel="noopener">해당링크</a>에서 확인 하실 수 있습니다.</li>
+</ul>
+</li>
+<li>새로운 지시어 (<code>php.ini</code> 지시어)<ul>
+<li>mail.force_extra_parameter</li>
+<li><a href="https://php.net/manual/kr/ini.core.php#ini.register-long-arrays" target="_blank" rel="noopener">register_long_arrays</a></li>
+<li><a href="https://php.net/manual/kr/session.configuration.php#ini.session.hash-function" target="_blank" rel="noopener">session.hash_function</a> : 해시 함수 선택(MD5 or SHA-1)</li>
+<li><a href="https://php.net/manual/kr/session.configuration.php#ini.session.hash-bits-per-character" target="_blank" rel="noopener">session.hash_bits_per_character</a></li>
+<li><a href="https://php.net/manual/kr/ini.core.php#ini.zend.ze1-compatibility-mode" target="_blank" rel="noopener">zend.ze1_compatibility_mode</a> : 젠드엔진1 (PHP 4)호환모드 활성화</li>
+</ul>
+</li>
+</ul>
+<h5 id="기타-자세한-사항은-해당링크에서-확인-하실-수-있습니다"><a href="#기타-자세한-사항은-해당링크에서-확인-하실-수-있습니다" class="headerlink" title="기타 자세한 사항은 해당링크에서 확인 하실 수 있습니다."></a>기타 자세한 사항은 <a href="https://php.net/manual/kr/migration5.php" target="_blank" rel="noopener">해당링크</a>에서 확인 하실 수 있습니다.</h5><blockquote>
+<p>참고자료</p>
+</blockquote>
+<ul>
+<li><a href="https://php.net/manual/kr/migration5.php" title="해당 링크로 이동" target="_blank" rel="noopener">PHP 공식문서 - PHP4에서 PHP 5.0.x로 이행</a></li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/PHP/">PHP</a>, <a class="has-link-grey -link" href="/tags/PHP4/">PHP4</a>, <a class="has-link-grey -link" href="/tags/PHP5/">PHP5</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/04/23/pgsql-vs-mysql/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">［Database］ postgresql와 mysql 뭐가 다를까?</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/04/19/binary-search/">
+                <span class="level-item">［Algorithm］이진탐색 알고리즘(Binary Search Algorithm)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ko/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="https://hodory.dev/2018/04/20/php4-vs-php5/" data-num-posts="5"></div>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/logo.png" alt="Hodory">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Hodory
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Polyglot Programmer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, South Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        25
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        12
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        41
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/hodory" target="_blank">
+                팔로우</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/hodory">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/_ho_02">
+                
+                <i class="fab fa-instagram"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/ETC/">
+            <span class="level-start">
+                <span class="level-item">ETC</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/ETC/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/ETC/Database/">
+            <span class="level-start">
+                <span class="level-item">Database</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/ETC/Docker/">
+            <span class="level-start">
+                <span class="level-item">Docker</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/ETC/GCP/">
+            <span class="level-start">
+                <span class="level-item">GCP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Java/SpringBoot/">
+            <span class="level-start">
+                <span class="level-item">SpringBoot</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Javascript/NodeJS/">
+            <span class="level-start">
+                <span class="level-item">NodeJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/Vue-js/">
+            <span class="level-start">
+                <span class="level-item">Vue.js</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/PHP/">
+            <span class="level-start">
+                <span class="level-item">PHP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/Annotation/" style="font-size: 10px;">Annotation</a> <a href="/tags/Composer/" style="font-size: 10px;">Composer</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ERROR/" style="font-size: 10px;">ERROR</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/ES5-vs-ES6/" style="font-size: 10px;">ES5 vs ES6</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Eloquent/" style="font-size: 10px;">Eloquent</a> <a href="/tags/Etc/" style="font-size: 10px;">Etc.</a> <a href="/tags/GAE/" style="font-size: 10px;">GAE</a> <a href="/tags/GCP/" style="font-size: 10px;">GCP</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/INI-SET/" style="font-size: 10px;">INI_SET</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Javascript/" style="font-size: 16.67px;">Javascript</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/LogSystem/" style="font-size: 10px;">LogSystem</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/NuxtJS/" style="font-size: 10px;">NuxtJS</a> <a href="/tags/ORM/" style="font-size: 10px;">ORM</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PHP4/" style="font-size: 10px;">PHP4</a> <a href="/tags/PHP5/" style="font-size: 10px;">PHP5</a> <a href="/tags/PSR/" style="font-size: 10px;">PSR</a> <a href="/tags/Packagist/" style="font-size: 10px;">Packagist</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/Webpack/" style="font-size: 13.33px;">Webpack</a> <a href="/tags/function/" style="font-size: 13.33px;">function</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/pgSQL-vs-MySQL/" style="font-size: 10px;">pgSQL vs MySQL</a> <a href="/tags/pgsql/" style="font-size: 10px;">pgsql</a> <a href="/tags/postgresql/" style="font-size: 10px;">postgresql</a> <a href="/tags/str-pad/" style="font-size: 13.33px;">str_pad</a> <a href="/tags/도커/" style="font-size: 10px;">도커</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/06/hexo-travis-ci-with-no-contents/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hexo-logo.png" alt="［Hexo］TravisCI로 블로그 자동 배포시 겪은 문제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-06T03:22:59.000Z">2019-06-06</time></div>
+                    <a href="/2019/06/06/hexo-travis-ci-with-no-contents/" class="has-link-black-ter is-size-6">［Hexo］TravisCI로 블로그 자동 배포시 겪은 문제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/05/where-is-constructor-inject/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］해당 클래스의 서비스는 어디서 주입되나요??">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-05T02:40:37.000Z">2019-06-05</time></div>
+                    <a href="/2019/06/05/where-is-constructor-inject/" class="has-link-black-ter is-size-6">［Java］해당 클래스의 서비스는 어디서 주입되나요??</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/04/json-property-not-working/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］@JsonProperty이 왜 동작을 안하지?">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-04T14:13:03.000Z">2019-06-04</time></div>
+                    <a href="/2019/06/04/json-property-not-working/" class="has-link-black-ter is-size-6">［Java］@JsonProperty이 왜 동작을 안하지?</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/28/required-a-bean-of-type-that-could-not-be-found/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］@AllArgsConstructor의 잘못된 사용">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-28T14:29:30.000Z">2019-05-28</time></div>
+                    <a href="/2019/05/28/required-a-bean-of-type-that-could-not-be-found/" class="has-link-black-ter is-size-6">［Java］@AllArgsConstructor의 잘못된 사용</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/14/spring-boot-validate-user-old-password/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］스프링부트 회원 기존 비밀번호 체크하기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T06:42:32.000Z">2019-05-14</time></div>
+                    <a href="/2019/05/14/spring-boot-validate-user-old-password/" class="has-link-black-ter is-size-6">［Java］스프링부트 회원 기존 비밀번호 체크하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/06/hexo-travis-ci-with-no-contents/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hexo-logo.png" alt="［Hexo］TravisCI로 블로그 자동 배포시 겪은 문제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-06T03:22:59.000Z">2019-06-06</time></div>
+                    <a href="/2019/06/06/hexo-travis-ci-with-no-contents/" class="has-link-black-ter is-size-6">［Hexo］TravisCI로 블로그 자동 배포시 겪은 문제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/05/where-is-constructor-inject/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］해당 클래스의 서비스는 어디서 주입되나요??">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-05T02:40:37.000Z">2019-06-05</time></div>
+                    <a href="/2019/06/05/where-is-constructor-inject/" class="has-link-black-ter is-size-6">［Java］해당 클래스의 서비스는 어디서 주입되나요??</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/04/json-property-not-working/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］@JsonProperty이 왜 동작을 안하지?">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-04T14:13:03.000Z">2019-06-04</time></div>
+                    <a href="/2019/06/04/json-property-not-working/" class="has-link-black-ter is-size-6">［Java］@JsonProperty이 왜 동작을 안하지?</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/28/required-a-bean-of-type-that-could-not-be-found/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］@AllArgsConstructor의 잘못된 사용">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-28T14:29:30.000Z">2019-05-28</time></div>
+                    <a href="/2019/05/28/required-a-bean-of-type-that-could-not-be-found/" class="has-link-black-ter is-size-6">［Java］@AllArgsConstructor의 잘못된 사용</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/14/spring-boot-validate-user-old-password/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/spring-framework-logo.svg" alt="［Java］스프링부트 회원 기존 비밀번호 체크하기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T06:42:32.000Z">2019-05-14</time></div>
+                    <a href="/2019/05/14/spring-boot-validate-user-old-password/" class="has-link-black-ter is-size-6">［Java］스프링부트 회원 기존 비밀번호 체크하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/SpringBoot/">SpringBoot</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Hodory&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/hodory">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
