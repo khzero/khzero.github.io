@@ -5,9 +5,9 @@
   <subtitle>Hodory&#39;s Dev Blog</subtitle>
   <link href="/feed.xml" rel="self"/>
   
-  <link href="https://hodory.dev/"/>
+  <link href="https://blog.hodory.dev/"/>
   <updated>2019-06-09T09:16:23.000Z</updated>
-  <id>https://hodory.dev/</id>
+  <id>https://blog.hodory.dev/</id>
   
   <author>
     <name>khzero</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>［Hexo］블로그 주소를 바꾸었어요!</title>
-    <link href="https://hodory.dev/2019/06/09/github-pages-blog-migration/"/>
-    <id>https://hodory.dev/2019/06/09/github-pages-blog-migration/</id>
+    <link href="https://blog.hodory.dev/2019/06/09/github-pages-blog-migration/"/>
+    <id>https://blog.hodory.dev/2019/06/09/github-pages-blog-migration/</id>
     <published>2019-06-09T08:55:48.000Z</published>
     <updated>2019-06-09T09:16:23.000Z</updated>
     
-    <content type="html"><![CDATA[<p>이번에도 <a href="https://gracefullight.dev" target="_blank" rel="noopener">Gracefullight</a>님의 제안으로, dev 도메인을 구매하기로 하였습니다.</p><p>기존의 아이디를 사용하여 <code>khzero.dev</code>를 쓸까 하다가,<br></p><blockquote><p>이왕 구매하는거 깃허브 아이디도 바꾸고, 도메인도 맞춰서 사자!</p></blockquote><p>라고 생각을 했었습니다…그때 멈췄어야 했는데요…<br><a id="more"></a><br><a href="https://gracefullight.dev/2019/05/06/connecting-a-DEV-domain-to-github-pages/" target="_blank" rel="noopener">해당 포스팅</a>을 참조하여 작업을 진행하기 시작했습니다.</p><h3 id="1-도메인-구매-및-연결"><a href="#1-도메인-구매-및-연결" class="headerlink" title="1. 도메인 구매 및 연결"></a>1. 도메인 구매 및 연결</h3><p>닉네임을 찾다가 <code>Hodory</code>로 변경하고, <code>hodory.dev</code> 도메인을 구매했습니다.</p><p>Github Pages로 관리되던 <code>khzero.github.io</code> Repository 이름을 <code>hodory.github.io</code>로 변경하였죠</p><p>지난번 <a href="https://blog.hodory.dev/" target="_blank" rel="noopener">TravisCI로 블로그 자동 배포시 겪은 문제</a>에서 TravisCI로 배포 환경을 구축 했기 때문에,</p><p><img src="https://blog.hodory.dev/images/blog-migration/5.jpg" alt="Github Travis CI Configuration"></p><p>위의 이미지와 같이 깃허브에서 TravisCI 서비스연결도 다시하고, Hexo config.yml도 모두 수정하였습니다.</p><p>기존의 도메인 URL도 모두 변경하여 블로그를 배포했습니다.</p><h3 id="2-기존-블로그는-어떻게-해요"><a href="#2-기존-블로그는-어떻게-해요" class="headerlink" title="2. 기존 블로그는 어떻게 해요???"></a>2. 기존 블로그는 어떻게 해요???</h3><p>생각하여보니 현재 <a href="https://awesome-devblog.netlify.com" target="_blank" rel="noopener">어썸데브블로그</a>에 <code>khzero.github.io</code> 주소의 포스팅들이 공개 되어 있는데,</p><p>깃허브 아이디를 변경하면서 도메인 연결이 끊겨, 404 페이지를 노출하고 있었습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/6.jpg" alt="Github Pages Not Found"></p><p>급하게 khzero로 계정을 새로 만든 후, <code>khzero.github.io</code> Repository를 생성하고 기존 포스트를 배포하여 404로 노출되는것은 막았습니다.</p><h3 id="3-서브도메인으로-바꿀래요"><a href="#3-서브도메인으로-바꿀래요" class="headerlink" title="3. 서브도메인으로 바꿀래요!"></a>3. 서브도메인으로 바꿀래요!</h3><p>원래는 도메인을 <code>hodory.dev</code>로 쓰려 했지만, 서브 도메인으로 블로그임을 명시하고 싶어,<br><br>다시 hodory 계정의 hodory.github.io Rpository를 <code>blog.hodory.dev</code>로 CNAME을 설정하고</p><p>아래와 같이 설정하였습니다.<br><br>(<strong>※주의 : CNAME을 배포하면 아래의 설정이 초기화 되니 주의하시기 바랍니다.※</strong>) </p><p><img src="https://blog.hodory.dev/images/blog-migration/7.jpg" alt="Github Pages Custom Domain Setting"></p><p>배포를 하였더니 깃허브로부터 아래와 같은 메일이 왔었습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/1.jpg" alt="Github Pages Custom Domain Setting"></p><p>A 레코드에 <code>blog.hodory.dev</code>가 설정되어 있어서인데,<br>CNAME으로 변경하기위해 구글 도메인 DNS 설정에서 아래와 같이 변경했습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/9.jpg" alt="Google Domains - DNS Setting"></p><p>설정을 모두 마친 뒤, 지인들에게 자랑을 했는데 블로그가 아래와 같은 오류로 나오지 않는다했습니다.</p><blockquote><p>웹사이트에서 HSTS를 사용하므로 지금은 blog.hodory.dev에 방문할 수 없습니다. <br><br> 네트워크 오류와 공격은 대체로 일시적인 문제이기 때문에 나중에 이 페이지가 정상적으로 작동할 수 있습니다.</p></blockquote><blockquote><p>TTL 문제일 수 있어 최대 1H까지 리졸브가 안될 수 있어요</p></blockquote><p>라는 설명을 듣고 TTL을 <code>1m</code> 으로변경하였습니다</p><p><img src="https://blog.hodory.dev/images/blog-migration/8.jpg" alt="Google Domains - DNS Setting"></p><p>1분정도 지난 후 확인해보니 정상적으로 동작했습니다!</p><p>또 중간에 배포를 하다가 이와 같이 되는 노출되는 경우가 있었는데<br><img src="https://blog.hodory.dev/images/blog-migration/4.jpg" alt="크롬 - 연결이 비공개로 설정되어 있지 않습니다."></p><p>위에 기재하였던 CNAME이 수정되면서, <code>Enforce HTTPS</code> 가 체크 해제되어 있었습니다.<br>이 부분을 수정하니 정상적으로 노출이 되었습니다.</p><h3 id="4-기존-블로그를-연결하자"><a href="#4-기존-블로그를-연결하자" class="headerlink" title="4. 기존 블로그를 연결하자!"></a>4. 기존 블로그를 연결하자!</h3><p>블로그 주소가 변경되면서 해야할 것은</p><ol><li>oneSignal의 URL 변경</li><li>Analytics 수정</li><li>구글 애드센스 확인</li><li>Search Console 연결</li><li>페이스북 픽셀 주소변경</li><li>네이버 웹마스터도구 사이트 추가 </li></ol><p>6가지였습니다.</p><p>대부분 URL 변경만 한다거나, 추가하는 방식으로 간단하게 수정 되었으나, 4번에서 문제가 생겼습니다.</p><p>현재 Search Console의 구버전에서만 가능한 주소 변경 툴인데,</p><p>아래 이미지에 표시된 2번의 301 리디렉션 정상동작 여부에서 막혔습니ㅏㄷ. </p><p><img src="https://blog.hodory.dev/images/blog-migration/3.jpg" alt="Github Page - 301 리디렉션"></p><p>Github Pages 는 정적페이지이다보니 301로 리디렉션이 불가능합니다.</p><p>혹시나 하는 마음에 <a href="https://github.com/jekyll/jekyll-redirect-from" target="_blank" rel="noopener">jekyll-redirect-from</a> 패키지도 확인 해보았으나,</p><p>meta 태그와 script를 이용해 페이지를 이동시키는데,</p><p>구글봇이 해당 페이지를 읽을때 HTTP 코드가 200으로 나와서 301 리디렉션이 되지 않았습니다.</p><p>어쩔 수 없이 <a href="https://github.com/akfish/hexo-theme-redirect" target="_blank" rel="noopener">hexo-theme-redirect</a> 테마를 이용하여, meta 리디렉션만 설정하고</p><p>Search Console은 커뮤니티에 문의를 남기고 우선 재생성하기로 하여 모든 마이그레이션을 마무리지었습니다.</p><p>혹시나 Search Console 주소변경에 대한 다른 방법을 알고 계시다면 공유 부탁 드리겠습니다.</p>]]></content>
+    <content type="html"><![CDATA[<p>이번에도 <a href="https://gracefullight.dev" target="_blank" rel="noopener">Gracefullight</a>님의 제안으로, dev 도메인을 구매하기로 하였습니다.</p><p>기존의 아이디를 사용하여 <code>khzero.dev</code>를 쓸까 하다가,<br></p><blockquote><p>이왕 구매하는거 깃허브 아이디도 바꾸고, 도메인도 맞춰서 사자!</p></blockquote><p>라고 생각을 했었습니다…그때 멈췄어야 했는데요…<br><a id="more"></a><br><a href="https://gracefullight.dev/2019/05/06/connecting-a-DEV-domain-to-github-pages/" target="_blank" rel="noopener">해당 포스팅</a>을 참조하여 작업을 진행하기 시작했습니다.</p><h3 id="1-도메인-구매-및-연결"><a href="#1-도메인-구매-및-연결" class="headerlink" title="1. 도메인 구매 및 연결"></a>1. 도메인 구매 및 연결</h3><p>닉네임을 찾다가 <code>Hodory</code>로 변경하고, <code>hodory.dev</code> 도메인을 구매했습니다.</p><p>Github Pages로 관리되던 <code>khzero.github.io</code> Repository 이름을 <code>hodory.github.io</code>로 변경하였죠</p><p>지난번 <a href="https://blog.hodory.dev/">TravisCI로 블로그 자동 배포시 겪은 문제</a>에서 TravisCI로 배포 환경을 구축 했기 때문에,</p><p><img src="https://blog.hodory.dev/images/blog-migration/5.jpg" alt="Github Travis CI Configuration"></p><p>위의 이미지와 같이 깃허브에서 TravisCI 서비스연결도 다시하고, Hexo config.yml도 모두 수정하였습니다.</p><p>기존의 도메인 URL도 모두 변경하여 블로그를 배포했습니다.</p><h3 id="2-기존-블로그는-어떻게-해요"><a href="#2-기존-블로그는-어떻게-해요" class="headerlink" title="2. 기존 블로그는 어떻게 해요???"></a>2. 기존 블로그는 어떻게 해요???</h3><p>생각하여보니 현재 <a href="https://awesome-devblog.netlify.com" target="_blank" rel="noopener">어썸데브블로그</a>에 <code>khzero.github.io</code> 주소의 포스팅들이 공개 되어 있는데,</p><p>깃허브 아이디를 변경하면서 도메인 연결이 끊겨, 404 페이지를 노출하고 있었습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/6.jpg" alt="Github Pages Not Found"></p><p>급하게 khzero로 계정을 새로 만든 후, <code>khzero.github.io</code> Repository를 생성하고 기존 포스트를 배포하여 404로 노출되는것은 막았습니다.</p><h3 id="3-서브도메인으로-바꿀래요"><a href="#3-서브도메인으로-바꿀래요" class="headerlink" title="3. 서브도메인으로 바꿀래요!"></a>3. 서브도메인으로 바꿀래요!</h3><p>원래는 도메인을 <code>hodory.dev</code>로 쓰려 했지만, 서브 도메인으로 블로그임을 명시하고 싶어,<br><br>다시 hodory 계정의 hodory.github.io Rpository를 <code>blog.hodory.dev</code>로 CNAME을 설정하고</p><p>아래와 같이 설정하였습니다.<br><br>(<strong>※주의 : CNAME을 배포하면 아래의 설정이 초기화 되니 주의하시기 바랍니다.※</strong>) </p><p><img src="https://blog.hodory.dev/images/blog-migration/7.jpg" alt="Github Pages Custom Domain Setting"></p><p>배포를 하였더니 깃허브로부터 아래와 같은 메일이 왔었습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/1.jpg" alt="Github Pages Custom Domain Setting"></p><p>A 레코드에 <code>blog.hodory.dev</code>가 설정되어 있어서인데,<br>CNAME으로 변경하기위해 구글 도메인 DNS 설정에서 아래와 같이 변경했습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/9.jpg" alt="Google Domains - DNS Setting"></p><p>설정을 모두 마친 뒤, 지인들에게 자랑을 했는데 블로그가 아래와 같은 오류로 나오지 않는다했습니다.</p><blockquote><p>웹사이트에서 HSTS를 사용하므로 지금은 blog.hodory.dev에 방문할 수 없습니다. <br><br> 네트워크 오류와 공격은 대체로 일시적인 문제이기 때문에 나중에 이 페이지가 정상적으로 작동할 수 있습니다.</p></blockquote><blockquote><p>TTL 문제일 수 있어 최대 1H까지 리졸브가 안될 수 있어요</p></blockquote><p>라는 설명을 듣고 TTL을 <code>1m</code> 으로변경하였습니다</p><p><img src="https://blog.hodory.dev/images/blog-migration/8.jpg" alt="Google Domains - DNS Setting"></p><p>1분정도 지난 후 확인해보니 정상적으로 동작했습니다!</p><p>또 중간에 배포를 하다가 이와 같이 되는 노출되는 경우가 있었는데<br><img src="https://blog.hodory.dev/images/blog-migration/4.jpg" alt="크롬 - 연결이 비공개로 설정되어 있지 않습니다."></p><p>위에 기재하였던 CNAME이 수정되면서, <code>Enforce HTTPS</code> 가 체크 해제되어 있었습니다.<br>이 부분을 수정하니 정상적으로 노출이 되었습니다.</p><h3 id="4-기존-블로그를-연결하자"><a href="#4-기존-블로그를-연결하자" class="headerlink" title="4. 기존 블로그를 연결하자!"></a>4. 기존 블로그를 연결하자!</h3><p>블로그 주소가 변경되면서 해야할 것은</p><ol><li>oneSignal의 URL 변경</li><li>Analytics 수정</li><li>구글 애드센스 확인</li><li>Search Console 연결</li><li>페이스북 픽셀 주소변경</li><li>네이버 웹마스터도구 사이트 추가 </li></ol><p>6가지였습니다.</p><p>대부분 URL 변경만 한다거나, 추가하는 방식으로 간단하게 수정 되었으나, 4번에서 문제가 생겼습니다.</p><p>현재 Search Console의 구버전에서만 가능한 주소 변경 툴인데,</p><p>아래 이미지에 표시된 2번의 301 리디렉션 정상동작 여부에서 막혔습니ㅏㄷ. </p><p><img src="https://blog.hodory.dev/images/blog-migration/3.jpg" alt="Github Page - 301 리디렉션"></p><p>Github Pages 는 정적페이지이다보니 301로 리디렉션이 불가능합니다.</p><p>혹시나 하는 마음에 <a href="https://github.com/jekyll/jekyll-redirect-from" target="_blank" rel="noopener">jekyll-redirect-from</a> 패키지도 확인 해보았으나,</p><p>meta 태그와 script를 이용해 페이지를 이동시키는데,</p><p>구글봇이 해당 페이지를 읽을때 HTTP 코드가 200으로 나와서 301 리디렉션이 되지 않았습니다.</p><p>어쩔 수 없이 <a href="https://github.com/akfish/hexo-theme-redirect" target="_blank" rel="noopener">hexo-theme-redirect</a> 테마를 이용하여, meta 리디렉션만 설정하고</p><p>Search Console은 커뮤니티에 문의를 남기고 우선 재생성하기로 하여 모든 마이그레이션을 마무리지었습니다.</p><p>혹시나 Search Console 주소변경에 대한 다른 방법을 알고 계시다면 공유 부탁 드리겠습니다.</p>]]></content>
     
     <summary type="html">
     
@@ -36,21 +36,21 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://hodory.dev/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.hodory.dev/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://hodory.dev/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.hodory.dev/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>［Hexo］TravisCI로 블로그 자동 배포시 겪은 문제</title>
-    <link href="https://hodory.dev/2019/06/06/hexo-travis-ci-with-no-contents/"/>
-    <id>https://hodory.dev/2019/06/06/hexo-travis-ci-with-no-contents/</id>
+    <link href="https://blog.hodory.dev/2019/06/06/hexo-travis-ci-with-no-contents/"/>
+    <id>https://blog.hodory.dev/2019/06/06/hexo-travis-ci-with-no-contents/</id>
     <published>2019-06-06T03:22:59.000Z</published>
     <updated>2019-06-08T14:57:32.621Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="WARN-No-layout-자동-배포를-했더니-빈-파일들만-올라가요"><a href="#WARN-No-layout-자동-배포를-했더니-빈-파일들만-올라가요" class="headerlink" title="WARN  No layout 자동 배포를 했더니 빈 파일들만 올라가요!!"></a>WARN  No layout 자동 배포를 했더니 빈 파일들만 올라가요!!</h2><blockquote><p>한줄 요약 : theme 폴더를 레포지토리에 추가하시면됩니다.</p></blockquote><p>아래의 내용은 해당 원인을 찾아가던 본인의 경험담입니다… </p><hr><p>블로그를 직접 만드는데, 시간을 투자하는것 보다 포스팅을 하는게 더 가치 있겠다 싶어<br><br>현재 블로그를 Hexo + Github Page를 이용하여 운영하고 있습니다</p><p>기존에는 배포를 Hexo-cli를 이용하여 아래와 같은 명령어를 사용하여 배포 했습니다.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo generate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br></pre></td></tr></table></figure></p><p>쉘에서 해당 명령어를 작성하는것 또한 귀찮아져서 <code>package.json</code> 파일을 이용하여,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * package.json</span><br><span class="line"> */</span><br><span class="line">&#123;</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">        &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo d -g&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>해당 스크립트를 작성해서 <code>npm deploy</code>명령어로 배포를 하고, 소스는 별도의 레포지토리에 관리하고 있었습니다.</p><a id="more"></a><p>팀원에게는 자동 배포를 추천하였으나(<a href="https://jheloper.github.io/2019/04/hexo-ci-cd-with-codeship/)" target="_blank" rel="noopener">https://jheloper.github.io/2019/04/hexo-ci-cd-with-codeship/)</a>,<br>저는 설정하지 않고 있었죠…</p><p>그러던 중 <a href="https://gracefullight.dev" target="_blank" rel="noopener">Gracefullight</a>님의 추천을 받아,<br><br>이전에 보았던 ChangJoo Park님의 포스팅인 <a href="https://medium.com/@changjoopark/travis-ci%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-github-pages-hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9E%90%EB%8F%99-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-6a222a2013e6" target="_blank" rel="noopener">Travis CI를 이용한 Github Pages + Hexo 블로그 자동 배포하기</a>를 참고하여<br>작업하기로 결심했습니다.</p><ul><li>Github Access Token 발급 받기</li><li><code>_config.yml</code> 파일에 deploy.repo 수정하기</li><li>배포 스크립트인 <code>.travis.yml</code> 작성하기</li><li>깃허브 플러그인을 이용하여 레포지토리와 연결하기</li><li>Travis CI 서비스에서 해당 프로젝트에 Environment Variables에 <code>__GITHUB_TOKEN__</code> 이름의 환경변수에 액세스 토큰 추가하기 </li></ul><p>위의 다섯가지를 모두 마친 뒤,<br><br>드디어 소스코드를 관리하는 Github Repository에 푸시를 하였습니다!</p><p>빌드도 성공했고, 푸시도 성공적이였습니다.<br><br>확인하고자 블로그에 접속을 하였는데, 빈화면이 노출되고 있었습니다.</p><p>정적페이지이니까 우선적으로 <a href="https://github.com/hodory/hodory.github.io" target="_blank" rel="noopener">Github Page Repo</a>의 파일들을 확인했는데,<br>모든 경로의 index.html 파일들이 0바이트로 변경되어 있었습니다.</p><blockquote><p><code>.gitignore</code> 때문에 컨텐츠가 만들어지지 않는 것인가?<br></p></blockquote><p>먼저 의심을 했고 hexo-generator가 만들어주는 <code>db.json</code>도 git으로 버전관리대상에 추가 후 다시 푸시하였습니다.<br>예상대로 <code>hexo generate</code> 스크립트를 실행할때 생성 되기 때문에, 동일한 현상이 재현 되었습니다.</p><p>스크립트 실행시 무슨 문제가 있었다면 빌드가 중지 되었을텐데, Job log를 보았을때는 그런 문제가 없었습니다.</p><p>그리하여 기존 방식대로 우선 배포를 해둔 후, Job Log를 하나씩 자세히 들여다 보았는데</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WARN  No layout: 2019/06/05/where-is-constructor-inject/index.html</span><br><span class="line">WARN  No layout: 2019/06/04/json-property-not-working/index.html</span><br><span class="line">WARN  No layout: 2019/05/28/required-a-bean-of-type-that-could-not-be-found/index.html</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>위와 같이 No layout 이라는 경고 메세지가 있었습니다.<br><br>혹시나 하여 새로운 폴더에서 소스코드를 풀 받아 보았더니,<br><br>themes 폴더에 사용중이던 테마가 빈 폴더였습니다.</p><p>항상 로컬에서만 푸시 하였기 때문에, 그걸 모르고 있었죠…</p><p>깃허브 레포지토리에는 이와같이 표시되고 클릭 불가능한 상태였습니다.<br><img src="https://github.com/hodory/hodory.github.io/blob/master/images/github-theme-not-versioning.png?raw=true" alt="Github themes directory"></p><p>원인을 찾아본 결과, 해당 theme 마다 .git 디렉토리가 존재하고,<br><br>개별적으로 버전관리가 되고 있기 때문에 저의 레포지토리를 pull을 받아도 사용할 수 없었습니다.</p><p><a href="https://postlude.github.io/2019/01/01/hexo-themes-and-git-submodule/" target="_blank" rel="noopener">해당 포스팅</a>을 보고,<br>서브모듈을 사용해야겠다 생각했습니다.</p><p>하지만 템플릿쪽이다보니 개별적인 수정사항들도 생길 수 있기 때문에 직접 관리하는게 좋겠다 싶어서,<br>아예 .git 폴더를 지우고, 제 레포지토리에서 버전관리 할 수 있게 하는 쪽으로 마음을 바꾸었습니다.</p><p>그런데 <code>themes/icarus/.git</code> 폴더를 삭제하고, <code>git status</code> 명령을 쳤을때,<br><br><code>themes/icarus</code> 디렉토리 하위 파일들이 <code>Untracked files</code>에 없었습니다.<br><br>혹시나해서 폴더명을 바꾸니까 노출이 되었고요..</p><p>git에 캐시가 남아 있나? 싶어 <code>git rm --cached themes/icarus</code> 명령어를 사용하였더니<br><br>정상적으로 <code>Untracked files</code>에 노출이 되어 버전관리에 추가한 후, 푸시를 했습니다.</p><p>그 후, 현재와 같이 정상적으로 동작하고 있습니다!!</p><p>정말 중요한 핵심은 <code>theme 폴더를 레포지토리에 추가하시면됩니다.</code> 였기 때문에<br><br>한줄 요약으로 맨 위에 기재해두었습니다.</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="WARN-No-layout-자동-배포를-했더니-빈-파일들만-올라가요"><a href="#WARN-No-layout-자동-배포를-했더니-빈-파일들만-올라가요" class="headerlink" title="WARN  No layout 자동 배포를 했더니 빈 파일들만 올라가요!!"></a>WARN  No layout 자동 배포를 했더니 빈 파일들만 올라가요!!</h2><blockquote><p>한줄 요약 : theme 폴더를 레포지토리에 추가하시면됩니다.</p></blockquote><p>아래의 내용은 해당 원인을 찾아가던 본인의 경험담입니다… </p><hr><p>블로그를 직접 만드는데, 시간을 투자하는것 보다 포스팅을 하는게 더 가치 있겠다 싶어<br><br>현재 블로그를 Hexo + Github Page를 이용하여 운영하고 있습니다</p><p>기존에는 배포를 Hexo-cli를 이용하여 아래와 같은 명령어를 사용하여 배포 했습니다.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean</span><br><span class="line"><span class="meta">$</span> hexo generate</span><br><span class="line"><span class="meta">$</span> hexo deploy</span><br></pre></td></tr></table></figure></p><p>쉘에서 해당 명령어를 작성하는것 또한 귀찮아져서 <code>package.json</code> 파일을 이용하여,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * package.json</span><br><span class="line"> */</span><br><span class="line">&#123;</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">        &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo d -g&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>해당 스크립트를 작성해서 <code>npm deploy</code>명령어로 배포를 하고, 소스는 별도의 레포지토리에 관리하고 있었습니다.</p><a id="more"></a><p>팀원에게는 자동 배포를 추천하였으나(<a href="https://jheloper.github.io/2019/04/hexo-ci-cd-with-codeship/)" target="_blank" rel="noopener">https://jheloper.github.io/2019/04/hexo-ci-cd-with-codeship/)</a>,<br>저는 설정하지 않고 있었죠…</p><p>그러던 중 <a href="https://gracefullight.dev" target="_blank" rel="noopener">Gracefullight</a>님의 추천을 받아,<br><br>이전에 보았던 ChangJoo Park님의 포스팅인 <a href="https://medium.com/@changjoopark/travis-ci%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-github-pages-hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9E%90%EB%8F%99-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-6a222a2013e6" target="_blank" rel="noopener">Travis CI를 이용한 Github Pages + Hexo 블로그 자동 배포하기</a>를 참고하여<br>작업하기로 결심했습니다.</p><ul><li>Github Access Token 발급 받기</li><li><code>_config.yml</code> 파일에 deploy.repo 수정하기</li><li>배포 스크립트인 <code>.travis.yml</code> 작성하기</li><li>깃허브 플러그인을 이용하여 레포지토리와 연결하기</li><li>Travis CI 서비스에서 해당 프로젝트에 Environment Variables에 <code>__GITHUB_TOKEN__</code> 이름의 환경변수에 액세스 토큰 추가하기 </li></ul><p>위의 다섯가지를 모두 마친 뒤,<br><br>드디어 소스코드를 관리하는 Github Repository에 푸시를 하였습니다!</p><p>빌드도 성공했고, 푸시도 성공적이였습니다.<br><br>확인하고자 블로그에 접속을 하였는데, 빈화면이 노출되고 있었습니다.</p><p>정적페이지이니까 우선적으로 <a href="https://github.com/hodory/hodory.github.io" target="_blank" rel="noopener">Github Page Repo</a>의 파일들을 확인했는데,<br>모든 경로의 index.html 파일들이 0바이트로 변경되어 있었습니다.</p><blockquote><p><code>.gitignore</code> 때문에 컨텐츠가 만들어지지 않는 것인가?<br></p></blockquote><p>먼저 의심을 했고 hexo-generator가 만들어주는 <code>db.json</code>도 git으로 버전관리대상에 추가 후 다시 푸시하였습니다.<br>예상대로 <code>hexo generate</code> 스크립트를 실행할때 생성 되기 때문에, 동일한 현상이 재현 되었습니다.</p><p>스크립트 실행시 무슨 문제가 있었다면 빌드가 중지 되었을텐데, Job log를 보았을때는 그런 문제가 없었습니다.</p><p>그리하여 기존 방식대로 우선 배포를 해둔 후, Job Log를 하나씩 자세히 들여다 보았는데</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WARN  No layout: 2019/06/05/where-is-constructor-inject/index.html</span><br><span class="line">WARN  No layout: 2019/06/04/json-property-not-working/index.html</span><br><span class="line">WARN  No layout: 2019/05/28/required-a-bean-of-type-that-could-not-be-found/index.html</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>위와 같이 No layout 이라는 경고 메세지가 있었습니다.<br><br>혹시나 하여 새로운 폴더에서 소스코드를 풀 받아 보았더니,<br><br>themes 폴더에 사용중이던 테마가 빈 폴더였습니다.</p><p>항상 로컬에서만 푸시 하였기 때문에, 그걸 모르고 있었죠…</p><p>깃허브 레포지토리에는 이와같이 표시되고 클릭 불가능한 상태였습니다.<br><img src="https://github.com/hodory/hodory.github.io/blob/master/images/github-theme-not-versioning.png?raw=true" alt="Github themes directory"></p><p>원인을 찾아본 결과, 해당 theme 마다 .git 디렉토리가 존재하고,<br><br>개별적으로 버전관리가 되고 있기 때문에 저의 레포지토리를 pull을 받아도 사용할 수 없었습니다.</p><p><a href="https://postlude.github.io/2019/01/01/hexo-themes-and-git-submodule/" target="_blank" rel="noopener">해당 포스팅</a>을 보고,<br>서브모듈을 사용해야겠다 생각했습니다.</p><p>하지만 템플릿쪽이다보니 개별적인 수정사항들도 생길 수 있기 때문에 직접 관리하는게 좋겠다 싶어서,<br>아예 .git 폴더를 지우고, 제 레포지토리에서 버전관리 할 수 있게 하는 쪽으로 마음을 바꾸었습니다.</p><p>그런데 <code>themes/icarus/.git</code> 폴더를 삭제하고, <code>git status</code> 명령을 쳤을때,<br><br><code>themes/icarus</code> 디렉토리 하위 파일들이 <code>Untracked files</code>에 없었습니다.<br><br>혹시나해서 폴더명을 바꾸니까 노출이 되었고요..</p><p>git에 캐시가 남아 있나? 싶어 <code>git rm --cached themes/icarus</code> 명령어를 사용하였더니<br><br>정상적으로 <code>Untracked files</code>에 노출이 되어 버전관리에 추가한 후, 푸시를 했습니다.</p><p>그 후, 현재와 같이 정상적으로 동작하고 있습니다!!</p><p>정말 중요한 핵심은 <code>theme 폴더를 레포지토리에 추가하시면됩니다.</code> 였기 때문에<br><br>한줄 요약으로 맨 위에 기재해두었습니다.</p>]]></content>
     
     <summary type="html">
     
@@ -60,23 +60,23 @@
 &lt;p&gt;아래의 내용은 해당 원인을 찾아가던 본인의 경험담입니다… &lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;블로그를 직접 만드는데, 시간을 투자하는것 보다 포스팅을 하는게 더 가치 있겠다 싶어&lt;br&gt;&lt;br&gt;현재 블로그를 Hexo + Github Page를 이용하여 운영하고 있습니다&lt;/p&gt;
-&lt;p&gt;기존에는 배포를 Hexo-cli를 이용하여 아래와 같은 명령어를 사용하여 배포 했습니다.&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; hexo clean&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; hexo generate&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; hexo deploy&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;기존에는 배포를 Hexo-cli를 이용하여 아래와 같은 명령어를 사용하여 배포 했습니다.&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt; hexo clean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt; hexo generate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt; hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;쉘에서 해당 명령어를 작성하는것 또한 귀찮아져서 &lt;code&gt;package.json&lt;/code&gt; 파일을 이용하여,&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; * package.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;scripts&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;quot;deploy&amp;quot;: &amp;quot;hexo clean &amp;amp;&amp;amp; hexo d -g&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;해당 스크립트를 작성해서 &lt;code&gt;npm deploy&lt;/code&gt;명령어로 배포를 하고, 소스는 별도의 레포지토리에 관리하고 있었습니다.&lt;/p&gt;
     
     </summary>
     
-      <category term="Hexo" scheme="https://hodory.dev/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.hodory.dev/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://hodory.dev/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.hodory.dev/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>［Java］해당 클래스의 서비스는 어디서 주입되나요??</title>
-    <link href="https://hodory.dev/2019/06/05/where-is-constructor-inject/"/>
-    <id>https://hodory.dev/2019/06/05/where-is-constructor-inject/</id>
+    <link href="https://blog.hodory.dev/2019/06/05/where-is-constructor-inject/"/>
+    <id>https://blog.hodory.dev/2019/06/05/where-is-constructor-inject/</id>
     <published>2019-06-05T02:40:37.000Z</published>
     <updated>2019-06-08T14:56:49.530Z</updated>
     
@@ -95,21 +95,21 @@
     
     </summary>
     
-      <category term="Java" scheme="https://hodory.dev/categories/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/categories/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/categories/Java/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/categories/Java/SpringBoot/"/>
     
     
-      <category term="Java" scheme="https://hodory.dev/tags/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/tags/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/tags/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>［Java］@JsonProperty이 왜 동작을 안하지?</title>
-    <link href="https://hodory.dev/2019/06/04/json-property-not-working/"/>
-    <id>https://hodory.dev/2019/06/04/json-property-not-working/</id>
+    <link href="https://blog.hodory.dev/2019/06/04/json-property-not-working/"/>
+    <id>https://blog.hodory.dev/2019/06/04/json-property-not-working/</id>
     <published>2019-06-04T14:13:03.000Z</published>
     <updated>2019-06-04T14:13:03.117Z</updated>
     
@@ -123,21 +123,21 @@
     
     </summary>
     
-      <category term="Java" scheme="https://hodory.dev/categories/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/categories/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/categories/Java/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/categories/Java/SpringBoot/"/>
     
     
-      <category term="Java" scheme="https://hodory.dev/tags/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/tags/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/tags/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>［Java］@AllArgsConstructor의 잘못된 사용</title>
-    <link href="https://hodory.dev/2019/05/28/required-a-bean-of-type-that-could-not-be-found/"/>
-    <id>https://hodory.dev/2019/05/28/required-a-bean-of-type-that-could-not-be-found/</id>
+    <link href="https://blog.hodory.dev/2019/05/28/required-a-bean-of-type-that-could-not-be-found/"/>
+    <id>https://blog.hodory.dev/2019/05/28/required-a-bean-of-type-that-could-not-be-found/</id>
     <published>2019-05-28T14:29:30.000Z</published>
     <updated>2019-06-08T14:59:03.472Z</updated>
     
@@ -149,25 +149,25 @@
     
     </summary>
     
-      <category term="Java" scheme="https://hodory.dev/categories/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/categories/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/categories/Java/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/categories/Java/SpringBoot/"/>
     
     
-      <category term="Java" scheme="https://hodory.dev/tags/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/tags/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/tags/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/tags/SpringBoot/"/>
     
-      <category term="Lombok" scheme="https://hodory.dev/tags/Lombok/"/>
+      <category term="Lombok" scheme="https://blog.hodory.dev/tags/Lombok/"/>
     
-      <category term="Annotation" scheme="https://hodory.dev/tags/Annotation/"/>
+      <category term="Annotation" scheme="https://blog.hodory.dev/tags/Annotation/"/>
     
   </entry>
   
   <entry>
     <title>［Java］스프링부트 회원 기존 비밀번호 체크하기</title>
-    <link href="https://hodory.dev/2019/05/14/spring-boot-validate-user-old-password/"/>
-    <id>https://hodory.dev/2019/05/14/spring-boot-validate-user-old-password/</id>
+    <link href="https://blog.hodory.dev/2019/05/14/spring-boot-validate-user-old-password/"/>
+    <id>https://blog.hodory.dev/2019/05/14/spring-boot-validate-user-old-password/</id>
     <published>2019-05-14T06:42:32.000Z</published>
     <updated>2019-05-14T06:42:32.000Z</updated>
     
@@ -183,21 +183,21 @@
     
     </summary>
     
-      <category term="Java" scheme="https://hodory.dev/categories/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/categories/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/categories/Java/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/categories/Java/SpringBoot/"/>
     
     
-      <category term="Java" scheme="https://hodory.dev/tags/Java/"/>
+      <category term="Java" scheme="https://blog.hodory.dev/tags/Java/"/>
     
-      <category term="SpringBoot" scheme="https://hodory.dev/tags/SpringBoot/"/>
+      <category term="SpringBoot" scheme="https://blog.hodory.dev/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>［JS］jQuery 없이 Selectbox에서 여러개 선택된 option의 값 추출하기</title>
-    <link href="https://hodory.dev/2019/05/12/how-to-get-multiple-selected-options-with-vanillajs/"/>
-    <id>https://hodory.dev/2019/05/12/how-to-get-multiple-selected-options-with-vanillajs/</id>
+    <link href="https://blog.hodory.dev/2019/05/12/how-to-get-multiple-selected-options-with-vanillajs/"/>
+    <id>https://blog.hodory.dev/2019/05/12/how-to-get-multiple-selected-options-with-vanillajs/</id>
     <published>2019-05-12T05:29:38.000Z</published>
     <updated>2019-05-12T07:13:37.754Z</updated>
     
@@ -214,21 +214,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="https://hodory.dev/categories/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/categories/Javascript/"/>
     
     
-      <category term="Javascript" scheme="https://hodory.dev/tags/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/tags/Javascript/"/>
     
-      <category term="JS" scheme="https://hodory.dev/tags/JS/"/>
+      <category term="JS" scheme="https://blog.hodory.dev/tags/JS/"/>
     
-      <category term="Webpack" scheme="https://hodory.dev/tags/Webpack/"/>
+      <category term="Webpack" scheme="https://blog.hodory.dev/tags/Webpack/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］Monolog와 함께 로그를 시작하자 - 1</title>
-    <link href="https://hodory.dev/2019/05/10/php-logging-with-monolog-1/"/>
-    <id>https://hodory.dev/2019/05/10/php-logging-with-monolog-1/</id>
+    <link href="https://blog.hodory.dev/2019/05/10/php-logging-with-monolog-1/"/>
+    <id>https://blog.hodory.dev/2019/05/10/php-logging-with-monolog-1/</id>
     <published>2019-05-09T15:27:05.000Z</published>
     <updated>2019-06-08T14:56:49.525Z</updated>
     
@@ -252,23 +252,23 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="LogSystem" scheme="https://hodory.dev/tags/LogSystem/"/>
+      <category term="LogSystem" scheme="https://blog.hodory.dev/tags/LogSystem/"/>
     
-      <category term="Composer" scheme="https://hodory.dev/tags/Composer/"/>
+      <category term="Composer" scheme="https://blog.hodory.dev/tags/Composer/"/>
     
-      <category term="Packagist" scheme="https://hodory.dev/tags/Packagist/"/>
+      <category term="Packagist" scheme="https://blog.hodory.dev/tags/Packagist/"/>
     
   </entry>
   
   <entry>
     <title>［Laravel］with() | has() | whereHas() 뭐가 다를까</title>
-    <link href="https://hodory.dev/2019/04/27/eloquent-orm-with-has-where-has/"/>
-    <id>https://hodory.dev/2019/04/27/eloquent-orm-with-has-where-has/</id>
+    <link href="https://blog.hodory.dev/2019/04/27/eloquent-orm-with-has-where-has/"/>
+    <id>https://blog.hodory.dev/2019/04/27/eloquent-orm-with-has-where-has/</id>
     <published>2019-04-26T15:15:24.000Z</published>
     <updated>2019-05-12T07:09:26.726Z</updated>
     
@@ -284,23 +284,23 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="Laravel" scheme="https://hodory.dev/tags/Laravel/"/>
+      <category term="Laravel" scheme="https://blog.hodory.dev/tags/Laravel/"/>
     
-      <category term="Eloquent" scheme="https://hodory.dev/tags/Eloquent/"/>
+      <category term="Eloquent" scheme="https://blog.hodory.dev/tags/Eloquent/"/>
     
-      <category term="ORM" scheme="https://hodory.dev/tags/ORM/"/>
+      <category term="ORM" scheme="https://blog.hodory.dev/tags/ORM/"/>
     
   </entry>
   
   <entry>
     <title>［JS］Knex와 Webpack을 같이 쓰면서 발생한 오류 처리</title>
-    <link href="https://hodory.dev/2019/04/18/knex-with-webpack/"/>
-    <id>https://hodory.dev/2019/04/18/knex-with-webpack/</id>
+    <link href="https://blog.hodory.dev/2019/04/18/knex-with-webpack/"/>
+    <id>https://blog.hodory.dev/2019/04/18/knex-with-webpack/</id>
     <published>2019-04-18T10:10:52.000Z</published>
     <updated>2019-06-08T14:57:07.154Z</updated>
     
@@ -313,21 +313,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="https://hodory.dev/categories/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/categories/Javascript/"/>
     
     
-      <category term="Javascript" scheme="https://hodory.dev/tags/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/tags/Javascript/"/>
     
-      <category term="JS" scheme="https://hodory.dev/tags/JS/"/>
+      <category term="JS" scheme="https://blog.hodory.dev/tags/JS/"/>
     
-      <category term="Webpack" scheme="https://hodory.dev/tags/Webpack/"/>
+      <category term="Webpack" scheme="https://blog.hodory.dev/tags/Webpack/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］배열 key의 min 또는 max 구하기</title>
-    <link href="https://hodory.dev/2018/10/27/php-array-column/"/>
-    <id>https://hodory.dev/2018/10/27/php-array-column/</id>
+    <link href="https://blog.hodory.dev/2018/10/27/php-array-column/"/>
+    <id>https://blog.hodory.dev/2018/10/27/php-array-column/</id>
     <published>2018-10-27T06:23:32.000Z</published>
     <updated>2019-05-12T07:11:32.057Z</updated>
     
@@ -340,21 +340,21 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="str_pad" scheme="https://hodory.dev/tags/str-pad/"/>
+      <category term="str_pad" scheme="https://blog.hodory.dev/tags/str-pad/"/>
     
-      <category term="function" scheme="https://hodory.dev/tags/function/"/>
+      <category term="function" scheme="https://blog.hodory.dev/tags/function/"/>
     
   </entry>
   
   <entry>
     <title>［VueJS］vue.js에서 이벤트 버스 사용하기</title>
-    <link href="https://hodory.dev/2018/08/27/vuejs-eventbus/"/>
-    <id>https://hodory.dev/2018/08/27/vuejs-eventbus/</id>
+    <link href="https://blog.hodory.dev/2018/08/27/vuejs-eventbus/"/>
+    <id>https://blog.hodory.dev/2018/08/27/vuejs-eventbus/</id>
     <published>2018-08-27T07:51:38.000Z</published>
     <updated>2019-04-20T15:56:26.346Z</updated>
     
@@ -367,21 +367,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="https://hodory.dev/categories/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/categories/Javascript/"/>
     
-      <category term="Vue.js" scheme="https://hodory.dev/categories/Javascript/Vue-js/"/>
+      <category term="Vue.js" scheme="https://blog.hodory.dev/categories/Javascript/Vue-js/"/>
     
     
-      <category term="JS" scheme="https://hodory.dev/tags/JS/"/>
+      <category term="JS" scheme="https://blog.hodory.dev/tags/JS/"/>
     
-      <category term="VueJS" scheme="https://hodory.dev/tags/VueJS/"/>
+      <category term="VueJS" scheme="https://blog.hodory.dev/tags/VueJS/"/>
     
   </entry>
   
   <entry>
     <title>［GCP］ Nuxt.js GAE에 배포 이슈사항</title>
-    <link href="https://hodory.dev/2018/07/20/deploy-nuxt-to-GAE/"/>
-    <id>https://hodory.dev/2018/07/20/deploy-nuxt-to-GAE/</id>
+    <link href="https://blog.hodory.dev/2018/07/20/deploy-nuxt-to-GAE/"/>
+    <id>https://blog.hodory.dev/2018/07/20/deploy-nuxt-to-GAE/</id>
     <published>2018-07-20T05:45:42.000Z</published>
     <updated>2019-05-10T15:38:07.314Z</updated>
     
@@ -394,23 +394,23 @@
     
     </summary>
     
-      <category term="ETC" scheme="https://hodory.dev/categories/ETC/"/>
+      <category term="ETC" scheme="https://blog.hodory.dev/categories/ETC/"/>
     
-      <category term="GCP" scheme="https://hodory.dev/categories/ETC/GCP/"/>
+      <category term="GCP" scheme="https://blog.hodory.dev/categories/ETC/GCP/"/>
     
     
-      <category term="GCP" scheme="https://hodory.dev/tags/GCP/"/>
+      <category term="GCP" scheme="https://blog.hodory.dev/tags/GCP/"/>
     
-      <category term="GAE" scheme="https://hodory.dev/tags/GAE/"/>
+      <category term="GAE" scheme="https://blog.hodory.dev/tags/GAE/"/>
     
-      <category term="NuxtJS" scheme="https://hodory.dev/tags/NuxtJS/"/>
+      <category term="NuxtJS" scheme="https://blog.hodory.dev/tags/NuxtJS/"/>
     
   </entry>
   
   <entry>
     <title>［Database］ postgresql와 mysql 뭐가 다를까?</title>
-    <link href="https://hodory.dev/2018/04/23/pgsql-vs-mysql/"/>
-    <id>https://hodory.dev/2018/04/23/pgsql-vs-mysql/</id>
+    <link href="https://blog.hodory.dev/2018/04/23/pgsql-vs-mysql/"/>
+    <id>https://blog.hodory.dev/2018/04/23/pgsql-vs-mysql/</id>
     <published>2018-04-23T08:22:45.000Z</published>
     <updated>2019-04-20T16:02:46.584Z</updated>
     
@@ -424,27 +424,27 @@
     
     </summary>
     
-      <category term="ETC" scheme="https://hodory.dev/categories/ETC/"/>
+      <category term="ETC" scheme="https://blog.hodory.dev/categories/ETC/"/>
     
-      <category term="Database" scheme="https://hodory.dev/categories/ETC/Database/"/>
+      <category term="Database" scheme="https://blog.hodory.dev/categories/ETC/Database/"/>
     
     
-      <category term="DataBase" scheme="https://hodory.dev/tags/DataBase/"/>
+      <category term="DataBase" scheme="https://blog.hodory.dev/tags/DataBase/"/>
     
-      <category term="postgresql" scheme="https://hodory.dev/tags/postgresql/"/>
+      <category term="postgresql" scheme="https://blog.hodory.dev/tags/postgresql/"/>
     
-      <category term="pgsql" scheme="https://hodory.dev/tags/pgsql/"/>
+      <category term="pgsql" scheme="https://blog.hodory.dev/tags/pgsql/"/>
     
-      <category term="mysql" scheme="https://hodory.dev/tags/mysql/"/>
+      <category term="mysql" scheme="https://blog.hodory.dev/tags/mysql/"/>
     
-      <category term="pgSQL vs MySQL" scheme="https://hodory.dev/tags/pgSQL-vs-MySQL/"/>
+      <category term="pgSQL vs MySQL" scheme="https://blog.hodory.dev/tags/pgSQL-vs-MySQL/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］ PHP4.x 버전과 PHP 5.x 버전 비교(Comparison between PHP4 and PHP5)</title>
-    <link href="https://hodory.dev/2018/04/20/php4-vs-php5/"/>
-    <id>https://hodory.dev/2018/04/20/php4-vs-php5/</id>
+    <link href="https://blog.hodory.dev/2018/04/20/php4-vs-php5/"/>
+    <id>https://blog.hodory.dev/2018/04/20/php4-vs-php5/</id>
     <published>2018-04-19T17:04:12.000Z</published>
     <updated>2019-05-12T07:11:32.084Z</updated>
     
@@ -460,21 +460,21 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="PHP5" scheme="https://hodory.dev/tags/PHP5/"/>
+      <category term="PHP5" scheme="https://blog.hodory.dev/tags/PHP5/"/>
     
-      <category term="PHP4" scheme="https://hodory.dev/tags/PHP4/"/>
+      <category term="PHP4" scheme="https://blog.hodory.dev/tags/PHP4/"/>
     
   </entry>
   
   <entry>
     <title>［Algorithm］이진탐색 알고리즘(Binary Search Algorithm)</title>
-    <link href="https://hodory.dev/2018/04/19/binary-search/"/>
-    <id>https://hodory.dev/2018/04/19/binary-search/</id>
+    <link href="https://blog.hodory.dev/2018/04/19/binary-search/"/>
+    <id>https://blog.hodory.dev/2018/04/19/binary-search/</id>
     <published>2018-04-19T03:54:39.000Z</published>
     <updated>2019-04-20T15:57:39.069Z</updated>
     
@@ -489,19 +489,19 @@
     
     </summary>
     
-      <category term="ETC" scheme="https://hodory.dev/categories/ETC/"/>
+      <category term="ETC" scheme="https://blog.hodory.dev/categories/ETC/"/>
     
-      <category term="Algorithm" scheme="https://hodory.dev/categories/ETC/Algorithm/"/>
+      <category term="Algorithm" scheme="https://blog.hodory.dev/categories/ETC/Algorithm/"/>
     
     
-      <category term="Algorithm" scheme="https://hodory.dev/tags/Algorithm/"/>
+      <category term="Algorithm" scheme="https://blog.hodory.dev/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>［ETC］Triple DES(3-DES)를 사용하지 않는 이유</title>
-    <link href="https://hodory.dev/2018/04/18/why-not-use-3des/"/>
-    <id>https://hodory.dev/2018/04/18/why-not-use-3des/</id>
+    <link href="https://blog.hodory.dev/2018/04/18/why-not-use-3des/"/>
+    <id>https://blog.hodory.dev/2018/04/18/why-not-use-3des/</id>
     <published>2018-04-18T09:27:20.000Z</published>
     <updated>2019-04-20T15:59:00.568Z</updated>
     
@@ -519,19 +519,19 @@
     
     </summary>
     
-      <category term="ETC" scheme="https://hodory.dev/categories/ETC/"/>
+      <category term="ETC" scheme="https://blog.hodory.dev/categories/ETC/"/>
     
     
-      <category term="Etc." scheme="https://hodory.dev/tags/Etc/"/>
+      <category term="Etc." scheme="https://blog.hodory.dev/tags/Etc/"/>
     
-      <category term="Security" scheme="https://hodory.dev/tags/Security/"/>
+      <category term="Security" scheme="https://blog.hodory.dev/tags/Security/"/>
     
   </entry>
   
   <entry>
     <title>［Algorithm］반복문 없이 1부터 10까지 합 구하기</title>
-    <link href="https://hodory.dev/2018/04/18/1-to-10-calc-without-for-loop/"/>
-    <id>https://hodory.dev/2018/04/18/1-to-10-calc-without-for-loop/</id>
+    <link href="https://blog.hodory.dev/2018/04/18/1-to-10-calc-without-for-loop/"/>
+    <id>https://blog.hodory.dev/2018/04/18/1-to-10-calc-without-for-loop/</id>
     <published>2018-04-18T06:53:47.000Z</published>
     <updated>2019-05-09T15:30:59.501Z</updated>
     
@@ -551,19 +551,19 @@
     
     </summary>
     
-      <category term="ETC" scheme="https://hodory.dev/categories/ETC/"/>
+      <category term="ETC" scheme="https://blog.hodory.dev/categories/ETC/"/>
     
-      <category term="Algorithm" scheme="https://hodory.dev/categories/ETC/Algorithm/"/>
+      <category term="Algorithm" scheme="https://blog.hodory.dev/categories/ETC/Algorithm/"/>
     
     
-      <category term="Algorithm" scheme="https://hodory.dev/tags/Algorithm/"/>
+      <category term="Algorithm" scheme="https://blog.hodory.dev/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］ PSR(PHP Standards Recommendations)이란?</title>
-    <link href="https://hodory.dev/2018/04/18/what-is-psr/"/>
-    <id>https://hodory.dev/2018/04/18/what-is-psr/</id>
+    <link href="https://blog.hodory.dev/2018/04/18/what-is-psr/"/>
+    <id>https://blog.hodory.dev/2018/04/18/what-is-psr/</id>
     <published>2018-04-17T17:28:50.000Z</published>
     <updated>2019-05-12T07:11:32.096Z</updated>
     
@@ -581,19 +581,19 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="PSR" scheme="https://hodory.dev/tags/PSR/"/>
+      <category term="PSR" scheme="https://blog.hodory.dev/tags/PSR/"/>
     
   </entry>
   
   <entry>
     <title>［JS］ ES5와 ES6 뭐가 다를까?</title>
-    <link href="https://hodory.dev/2018/04/17/es5-vs-es6/"/>
-    <id>https://hodory.dev/2018/04/17/es5-vs-es6/</id>
+    <link href="https://blog.hodory.dev/2018/04/17/es5-vs-es6/"/>
+    <id>https://blog.hodory.dev/2018/04/17/es5-vs-es6/</id>
     <published>2018-04-16T16:26:53.000Z</published>
     <updated>2019-05-12T07:13:37.763Z</updated>
     
@@ -609,25 +609,25 @@
     
     </summary>
     
-      <category term="Javascript" scheme="https://hodory.dev/categories/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/categories/Javascript/"/>
     
     
-      <category term="Javascript" scheme="https://hodory.dev/tags/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/tags/Javascript/"/>
     
-      <category term="JS" scheme="https://hodory.dev/tags/JS/"/>
+      <category term="JS" scheme="https://blog.hodory.dev/tags/JS/"/>
     
-      <category term="ES5" scheme="https://hodory.dev/tags/ES5/"/>
+      <category term="ES5" scheme="https://blog.hodory.dev/tags/ES5/"/>
     
-      <category term="ES6" scheme="https://hodory.dev/tags/ES6/"/>
+      <category term="ES6" scheme="https://blog.hodory.dev/tags/ES6/"/>
     
-      <category term="ES5 vs ES6" scheme="https://hodory.dev/tags/ES5-vs-ES6/"/>
+      <category term="ES5 vs ES6" scheme="https://blog.hodory.dev/tags/ES5-vs-ES6/"/>
     
   </entry>
   
   <entry>
     <title>［Node.js］Express.js로 NodeJS 시작하기</title>
-    <link href="https://hodory.dev/2018/03/11/start-nodejs/"/>
-    <id>https://hodory.dev/2018/03/11/start-nodejs/</id>
+    <link href="https://blog.hodory.dev/2018/03/11/start-nodejs/"/>
+    <id>https://blog.hodory.dev/2018/03/11/start-nodejs/</id>
     <published>2018-03-11T12:57:18.000Z</published>
     <updated>2019-04-26T13:15:15.622Z</updated>
     
@@ -642,23 +642,23 @@
     
     </summary>
     
-      <category term="Javascript" scheme="https://hodory.dev/categories/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/categories/Javascript/"/>
     
-      <category term="NodeJS" scheme="https://hodory.dev/categories/Javascript/NodeJS/"/>
+      <category term="NodeJS" scheme="https://blog.hodory.dev/categories/Javascript/NodeJS/"/>
     
     
-      <category term="Javascript" scheme="https://hodory.dev/tags/Javascript/"/>
+      <category term="Javascript" scheme="https://blog.hodory.dev/tags/Javascript/"/>
     
-      <category term="NodeJS" scheme="https://hodory.dev/tags/NodeJS/"/>
+      <category term="NodeJS" scheme="https://blog.hodory.dev/tags/NodeJS/"/>
     
-      <category term="Node" scheme="https://hodory.dev/tags/Node/"/>
+      <category term="Node" scheme="https://blog.hodory.dev/tags/Node/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］ 에러 보여주기</title>
-    <link href="https://hodory.dev/2017/11/17/php-view-error/"/>
-    <id>https://hodory.dev/2017/11/17/php-view-error/</id>
+    <link href="https://blog.hodory.dev/2017/11/17/php-view-error/"/>
+    <id>https://blog.hodory.dev/2017/11/17/php-view-error/</id>
     <published>2017-11-17T06:12:22.000Z</published>
     <updated>2019-05-12T07:11:32.045Z</updated>
     
@@ -673,21 +673,21 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="ERROR" scheme="https://hodory.dev/tags/ERROR/"/>
+      <category term="ERROR" scheme="https://blog.hodory.dev/tags/ERROR/"/>
     
-      <category term="INI_SET" scheme="https://hodory.dev/tags/INI-SET/"/>
+      <category term="INI_SET" scheme="https://blog.hodory.dev/tags/INI-SET/"/>
     
   </entry>
   
   <entry>
     <title>［Docker］명령어 정리</title>
-    <link href="https://hodory.dev/2017/09/01/docker-command/"/>
-    <id>https://hodory.dev/2017/09/01/docker-command/</id>
+    <link href="https://blog.hodory.dev/2017/09/01/docker-command/"/>
+    <id>https://blog.hodory.dev/2017/09/01/docker-command/</id>
     <published>2017-09-01T07:31:39.000Z</published>
     <updated>2018-03-16T01:14:18.000Z</updated>
     
@@ -702,21 +702,21 @@
     
     </summary>
     
-      <category term="ETC" scheme="https://hodory.dev/categories/ETC/"/>
+      <category term="ETC" scheme="https://blog.hodory.dev/categories/ETC/"/>
     
-      <category term="Docker" scheme="https://hodory.dev/categories/ETC/Docker/"/>
+      <category term="Docker" scheme="https://blog.hodory.dev/categories/ETC/Docker/"/>
     
     
-      <category term="Docker" scheme="https://hodory.dev/tags/Docker/"/>
+      <category term="Docker" scheme="https://blog.hodory.dev/tags/Docker/"/>
     
-      <category term="도커" scheme="https://hodory.dev/tags/%EB%8F%84%EC%BB%A4/"/>
+      <category term="도커" scheme="https://blog.hodory.dev/tags/%EB%8F%84%EC%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］삼항 연산자</title>
-    <link href="https://hodory.dev/2017/09/01/conditional-ternary-operator/"/>
-    <id>https://hodory.dev/2017/09/01/conditional-ternary-operator/</id>
+    <link href="https://blog.hodory.dev/2017/09/01/conditional-ternary-operator/"/>
+    <id>https://blog.hodory.dev/2017/09/01/conditional-ternary-operator/</id>
     <published>2017-09-01T01:09:11.000Z</published>
     <updated>2019-05-12T07:11:32.050Z</updated>
     
@@ -733,17 +733,17 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
   </entry>
   
   <entry>
     <title>［Hexo］ 명령어 정리</title>
-    <link href="https://hodory.dev/2017/08/31/how-to-use-hexo/"/>
-    <id>https://hodory.dev/2017/08/31/how-to-use-hexo/</id>
+    <link href="https://blog.hodory.dev/2017/08/31/how-to-use-hexo/"/>
+    <id>https://blog.hodory.dev/2017/08/31/how-to-use-hexo/</id>
     <published>2017-08-31T13:57:17.000Z</published>
     <updated>2019-04-20T16:01:22.207Z</updated>
     
@@ -757,17 +757,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://hodory.dev/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.hodory.dev/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://hodory.dev/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.hodory.dev/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>［PHP］ 0001과 같이 번호 지정 하기</title>
-    <link href="https://hodory.dev/2017/08/31/php-str-pad/"/>
-    <id>https://hodory.dev/2017/08/31/php-str-pad/</id>
+    <link href="https://blog.hodory.dev/2017/08/31/php-str-pad/"/>
+    <id>https://blog.hodory.dev/2017/08/31/php-str-pad/</id>
     <published>2017-08-31T12:51:38.000Z</published>
     <updated>2019-05-12T07:11:32.068Z</updated>
     
@@ -782,14 +782,14 @@
     
     </summary>
     
-      <category term="PHP" scheme="https://hodory.dev/categories/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/categories/PHP/"/>
     
     
-      <category term="PHP" scheme="https://hodory.dev/tags/PHP/"/>
+      <category term="PHP" scheme="https://blog.hodory.dev/tags/PHP/"/>
     
-      <category term="str_pad" scheme="https://hodory.dev/tags/str-pad/"/>
+      <category term="str_pad" scheme="https://blog.hodory.dev/tags/str-pad/"/>
     
-      <category term="function" scheme="https://hodory.dev/tags/function/"/>
+      <category term="function" scheme="https://blog.hodory.dev/tags/function/"/>
     
   </entry>
   

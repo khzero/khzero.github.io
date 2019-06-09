@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>https://hodory.dev/post-sitemap.xml</loc>
+        <loc>https://blog.hodory.dev/post-sitemap.xml</loc>
         <lastmod>2019-06-09T09:16:23.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://hodory.dev/page-sitemap.xml</loc>
+        <loc>https://blog.hodory.dev/page-sitemap.xml</loc>
         <lastmod>2018-04-20T03:08:57.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://hodory.dev/category-sitemap.xml</loc>
+        <loc>https://blog.hodory.dev/category-sitemap.xml</loc>
         <lastmod>2019-06-09T09:16:23.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://hodory.dev/tag-sitemap.xml</loc>
+        <loc>https://blog.hodory.dev/tag-sitemap.xml</loc>
         <lastmod>2019-06-09T09:16:23.000Z</lastmod>
     </sitemap>
 

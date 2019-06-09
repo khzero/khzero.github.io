@@ -2,90 +2,90 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://hodory.dev</loc>
+        <loc>https://blog.hodory.dev</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/Hexo/</loc>
+        <loc>https://blog.hodory.dev/categories/Hexo/</loc>
         <lastmod>2019-06-09T09:16:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/Java/SpringBoot/</loc>
+        <loc>https://blog.hodory.dev/categories/Java/SpringBoot/</loc>
         <lastmod>2019-06-08T14:59:03.472Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/Java/</loc>
+        <loc>https://blog.hodory.dev/categories/Java/</loc>
         <lastmod>2019-06-08T14:59:03.472Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/Javascript/</loc>
+        <loc>https://blog.hodory.dev/categories/Javascript/</loc>
         <lastmod>2019-06-08T14:57:07.154Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/PHP/</loc>
+        <loc>https://blog.hodory.dev/categories/PHP/</loc>
         <lastmod>2019-06-08T14:56:49.525Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/ETC/GCP/</loc>
+        <loc>https://blog.hodory.dev/categories/ETC/GCP/</loc>
         <lastmod>2019-05-10T15:38:07.314Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/ETC/</loc>
+        <loc>https://blog.hodory.dev/categories/ETC/</loc>
         <lastmod>2019-05-10T15:38:07.314Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/ETC/Algorithm/</loc>
+        <loc>https://blog.hodory.dev/categories/ETC/Algorithm/</loc>
         <lastmod>2019-05-09T15:30:59.501Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/Javascript/NodeJS/</loc>
+        <loc>https://blog.hodory.dev/categories/Javascript/NodeJS/</loc>
         <lastmod>2019-04-26T13:15:15.622Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/ETC/Database/</loc>
+        <loc>https://blog.hodory.dev/categories/ETC/Database/</loc>
         <lastmod>2019-04-20T16:02:46.584Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/Javascript/Vue-js/</loc>
+        <loc>https://blog.hodory.dev/categories/Javascript/Vue-js/</loc>
         <lastmod>2019-04-20T15:56:26.346Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hodory.dev/categories/ETC/Docker/</loc>
+        <loc>https://blog.hodory.dev/categories/ETC/Docker/</loc>
         <lastmod>2018-03-16T01:14:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
