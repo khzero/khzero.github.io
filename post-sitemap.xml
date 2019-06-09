@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://hodory.dev/2019/06/09/github-pages-blog-migration/</loc>
+        <lastmod>2019-06-09T09:16:23.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hodory.dev/2019/05/28/required-a-bean-of-type-that-could-not-be-found/</loc>
         <lastmod>2019-06-08T14:59:03.472Z</lastmod>
         <changefreq>weekly</changefreq>

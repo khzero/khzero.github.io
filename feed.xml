@@ -6,7 +6,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://hodory.dev/"/>
-  <updated>2019-06-08T14:57:32.621Z</updated>
+  <updated>2019-06-09T09:16:23.000Z</updated>
   <id>https://hodory.dev/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>［Hexo］블로그 주소를 바꾸었어요!</title>
+    <link href="https://hodory.dev/2019/06/09/github-pages-blog-migration/"/>
+    <id>https://hodory.dev/2019/06/09/github-pages-blog-migration/</id>
+    <published>2019-06-09T08:55:48.000Z</published>
+    <updated>2019-06-09T09:16:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>이번에도 <a href="https://gracefullight.dev" target="_blank" rel="noopener">Gracefullight</a>님의 제안으로, dev 도메인을 구매하기로 하였습니다.</p><p>기존의 아이디를 사용하여 <code>khzero.dev</code>를 쓸까 하다가,<br></p><blockquote><p>이왕 구매하는거 깃허브 아이디도 바꾸고, 도메인도 맞춰서 사자!</p></blockquote><p>라고 생각을 했었습니다…그때 멈췄어야 했는데요…<br><a id="more"></a><br><a href="https://gracefullight.dev/2019/05/06/connecting-a-DEV-domain-to-github-pages/" target="_blank" rel="noopener">해당 포스팅</a>을 참조하여 작업을 진행하기 시작했습니다.</p><h3 id="1-도메인-구매-및-연결"><a href="#1-도메인-구매-및-연결" class="headerlink" title="1. 도메인 구매 및 연결"></a>1. 도메인 구매 및 연결</h3><p>닉네임을 찾다가 <code>Hodory</code>로 변경하고, <code>hodory.dev</code> 도메인을 구매했습니다.</p><p>Github Pages로 관리되던 <code>khzero.github.io</code> Repository 이름을 <code>hodory.github.io</code>로 변경하였죠</p><p>지난번 <a href="https://blog.hodory.dev/" target="_blank" rel="noopener">TravisCI로 블로그 자동 배포시 겪은 문제</a>에서 TravisCI로 배포 환경을 구축 했기 때문에,</p><p><img src="https://blog.hodory.dev/images/blog-migration/5.jpg" alt="Github Travis CI Configuration"></p><p>위의 이미지와 같이 깃허브에서 TravisCI 서비스연결도 다시하고, Hexo config.yml도 모두 수정하였습니다.</p><p>기존의 도메인 URL도 모두 변경하여 블로그를 배포했습니다.</p><h3 id="2-기존-블로그는-어떻게-해요"><a href="#2-기존-블로그는-어떻게-해요" class="headerlink" title="2. 기존 블로그는 어떻게 해요???"></a>2. 기존 블로그는 어떻게 해요???</h3><p>생각하여보니 현재 <a href="https://awesome-devblog.netlify.com" target="_blank" rel="noopener">어썸데브블로그</a>에 <code>khzero.github.io</code> 주소의 포스팅들이 공개 되어 있는데,</p><p>깃허브 아이디를 변경하면서 도메인 연결이 끊겨, 404 페이지를 노출하고 있었습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/6.jpg" alt="Github Pages Not Found"></p><p>급하게 khzero로 계정을 새로 만든 후, <code>khzero.github.io</code> Repository를 생성하고 기존 포스트를 배포하여 404로 노출되는것은 막았습니다.</p><h3 id="3-서브도메인으로-바꿀래요"><a href="#3-서브도메인으로-바꿀래요" class="headerlink" title="3. 서브도메인으로 바꿀래요!"></a>3. 서브도메인으로 바꿀래요!</h3><p>원래는 도메인을 <code>hodory.dev</code>로 쓰려 했지만, 서브 도메인으로 블로그임을 명시하고 싶어,<br><br>다시 hodory 계정의 hodory.github.io Rpository를 <code>blog.hodory.dev</code>로 CNAME을 설정하고</p><p>아래와 같이 설정하였습니다.<br><br>(<strong>※주의 : CNAME을 배포하면 아래의 설정이 초기화 되니 주의하시기 바랍니다.※</strong>) </p><p><img src="https://blog.hodory.dev/images/blog-migration/7.jpg" alt="Github Pages Custom Domain Setting"></p><p>배포를 하였더니 깃허브로부터 아래와 같은 메일이 왔었습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/1.jpg" alt="Github Pages Custom Domain Setting"></p><p>A 레코드에 <code>blog.hodory.dev</code>가 설정되어 있어서인데,<br>CNAME으로 변경하기위해 구글 도메인 DNS 설정에서 아래와 같이 변경했습니다.</p><p><img src="https://blog.hodory.dev/images/blog-migration/9.jpg" alt="Google Domains - DNS Setting"></p><p>설정을 모두 마친 뒤, 지인들에게 자랑을 했는데 블로그가 아래와 같은 오류로 나오지 않는다했습니다.</p><blockquote><p>웹사이트에서 HSTS를 사용하므로 지금은 blog.hodory.dev에 방문할 수 없습니다. <br><br> 네트워크 오류와 공격은 대체로 일시적인 문제이기 때문에 나중에 이 페이지가 정상적으로 작동할 수 있습니다.</p></blockquote><blockquote><p>TTL 문제일 수 있어 최대 1H까지 리졸브가 안될 수 있어요</p></blockquote><p>라는 설명을 듣고 TTL을 <code>1m</code> 으로변경하였습니다</p><p><img src="https://blog.hodory.dev/images/blog-migration/8.jpg" alt="Google Domains - DNS Setting"></p><p>1분정도 지난 후 확인해보니 정상적으로 동작했습니다!</p><p>또 중간에 배포를 하다가 이와 같이 되는 노출되는 경우가 있었는데<br><img src="https://blog.hodory.dev/images/blog-migration/4.jpg" alt="크롬 - 연결이 비공개로 설정되어 있지 않습니다."></p><p>위에 기재하였던 CNAME이 수정되면서, <code>Enforce HTTPS</code> 가 체크 해제되어 있었습니다.<br>이 부분을 수정하니 정상적으로 노출이 되었습니다.</p><h3 id="4-기존-블로그를-연결하자"><a href="#4-기존-블로그를-연결하자" class="headerlink" title="4. 기존 블로그를 연결하자!"></a>4. 기존 블로그를 연결하자!</h3><p>블로그 주소가 변경되면서 해야할 것은</p><ol><li>oneSignal의 URL 변경</li><li>Analytics 수정</li><li>구글 애드센스 확인</li><li>Search Console 연결</li><li>페이스북 픽셀 주소변경</li><li>네이버 웹마스터도구 사이트 추가 </li></ol><p>6가지였습니다.</p><p>대부분 URL 변경만 한다거나, 추가하는 방식으로 간단하게 수정 되었으나, 4번에서 문제가 생겼습니다.</p><p>현재 Search Console의 구버전에서만 가능한 주소 변경 툴인데,</p><p>아래 이미지에 표시된 2번의 301 리디렉션 정상동작 여부에서 막혔습니ㅏㄷ. </p><p><img src="https://blog.hodory.dev/images/blog-migration/3.jpg" alt="Github Page - 301 리디렉션"></p><p>Github Pages 는 정적페이지이다보니 301로 리디렉션이 불가능합니다.</p><p>혹시나 하는 마음에 <a href="https://github.com/jekyll/jekyll-redirect-from" target="_blank" rel="noopener">jekyll-redirect-from</a> 패키지도 확인 해보았으나,</p><p>meta 태그와 script를 이용해 페이지를 이동시키는데,</p><p>구글봇이 해당 페이지를 읽을때 HTTP 코드가 200으로 나와서 301 리디렉션이 되지 않았습니다.</p><p>어쩔 수 없이 <a href="https://github.com/akfish/hexo-theme-redirect" target="_blank" rel="noopener">hexo-theme-redirect</a> 테마를 이용하여, meta 리디렉션만 설정하고</p><p>Search Console은 커뮤니티에 문의를 남기고 우선 재생성하기로 하여 모든 마이그레이션을 마무리지었습니다.</p><p>혹시나 Search Console 주소변경에 대한 다른 방법을 알고 계시다면 공유 부탁 드리겠습니다.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;이번에도 &lt;a href=&quot;https://gracefullight.dev&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gracefullight&lt;/a&gt;님의 제안으로, dev 도메인을 구매하기로 하였습니다.&lt;/p&gt;
+&lt;p&gt;기존의 아이디를 사용하여 &lt;code&gt;khzero.dev&lt;/code&gt;를 쓸까 하다가,&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이왕 구매하는거 깃허브 아이디도 바꾸고, 도메인도 맞춰서 사자!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;라고 생각을 했었습니다…그때 멈췄어야 했는데요…&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://hodory.dev/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://hodory.dev/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>［Hexo］TravisCI로 블로그 자동 배포시 겪은 문제</title>
